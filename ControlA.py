@@ -1,20 +1,17 @@
-import serial
+import requests
 import streamlit as st
 
-# 打开串口
-ser = serial.Serial('COM3', 9600)
-
-# 创建Streamlit应用程序
 st.title('Arduino Remote Control')
 
 # 创建按钮来控制开关状态
 on_button = st.button('Turn On')
 off_button = st.button('Turn Off')
 
-# 根据按钮状态发送指令到Arduino
+# 根据按钮状态发送请求到 Flask Web 服务
 if on_button:
-    ser.write(b'1')
-    st.write('LED is ON')
+    response = requests.post('http://127.0.0.1:5000/control', data='on')
+    st.write(response.text)
 elif off_button:
-    ser.write(b'0')
-    st.write('LED is OFF')
+    response = requests.post('http://127.0.0.1:5000/control', data='off')
+    st.write(response.text)
+
