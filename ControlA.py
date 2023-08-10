@@ -1,11 +1,11 @@
 import requests
 import streamlit as st
 
-st.title('Arduino Remote Control')
+st.title('请先检测脉搏')
 
 # 创建按钮来控制开关状态
-on_button = st.button('Turn On')
-off_button = st.button('Turn Off')
+on_button = st.button('开始')
+off_button = st.button('停止')
 
 # 根据按钮状态发送请求到 Flask Web 服务
 if on_button:
