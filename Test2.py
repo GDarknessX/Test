@@ -4,17 +4,17 @@ st.title("健康小问题")
 def main():
     variable_from_url = st.experimental_get_query_params().get("variable", [0])[0]
     
-    if variable_from_url == "0":
+    if variable_from_url == "0" and st.session_state.question is None:
         st.session_state.question = "a"
-    elif variable_from_url == "1":
+    elif variable_from_url == "1" and st.session_state.question is None:
         st.session_state.question == "d"
-    elif variable_from_url == "2":
+    elif variable_from_url == "2" and st.session_state.question is None:
         st.session_state.question = "i"
-    elif variable_from_url == "3":
+    elif variable_from_url == "3" and st.session_state.question is None:
         st.session_state.question = "k"
-    elif variable_from_url == "4":
+    elif variable_from_url == "4" and st.session_state.question is None:
         st.session_state.question = "o"
-    elif variable_from_url == "5":
+    elif variable_from_url == "5" and st.session_state.question is None:
         st.session_state.question = "r"
     else:
         st.session_state.question = st.session_state.question 
