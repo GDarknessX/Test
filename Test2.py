@@ -2,7 +2,22 @@ import streamlit as st
 st.title("健康小问题")
 
 def main():
-
+    variable_from_url = st.experimental_get_query_params().get("variable", [0])[0]
+    
+    if variable_from_url == "0":
+        st.session_state.question = "a"
+    elif variable_from_url == "1":
+        st.session_state.question == "d"
+    elif variable_from_url == "2":
+        st.session_state.question = "i"
+    elif variable_from_url == "3":
+        st.session_state.question = "k"
+    elif variable_from_url == "4":
+        st.session_state.question = "o"
+    elif variable_from_url == "5":
+        st.session_state.question = "r"
+    else:
+        st.session_state.question = st.session_state.question 
 
     # 问题和选项
     option_aa = "沉脉"
